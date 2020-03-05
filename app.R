@@ -30,8 +30,8 @@ window_open_erum <- function(id, type) {
 
 
 
-  workshop_path     <- "./erum2020_sessions_allcontribs_anonymous_onlyWorkshops.xlsx"
-  contribution_path <- "./erum2020_sessions_allcontribs_anonymous_noWorkshops.xlsx"
+  workshop_path     <- "./BioC2020_workshops.xlsx"
+  contribution_path <- "./BioC2020_talks_posters.xlsx"
   
   workshop_table <- readxl::read_excel(workshop_path)
   contribution_table_raw <- readxl::read_excel(contribution_path)
@@ -61,7 +61,7 @@ window_open_erum <- function(id, type) {
     rintrojs::introjsUI(),
     # header definition -------------------------------------------------------
     header = shinydashboard::dashboardHeader(
-      title = "assessr - eRum2020",
+      title = "assessr - BioC2020",
       titleWidth = 350
     ),
     
