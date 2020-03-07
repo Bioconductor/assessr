@@ -2,6 +2,7 @@ library(shiny)
 library(shinydashboard)
 library(clipr)
 library(rintrojs)
+library(dplyr)
 
 # URL(s) to Google Form(s) for Evaluation 
 # workshop_form <- function(id) {
@@ -208,7 +209,7 @@ abstract_table_compact <- workshop_table[, preselected_cols]
           shiny::actionButton(
             inputId = "launch_gform", label = "Open the Google Form to insert your evaluation", 
             icon = icon("database"), 
-            onclick =window_open_eval\\(form_id, input$submissionType),
+            onclick =window_open_eval(form_id, input$submissionType),
             class = "btn-success"
           )
         )
