@@ -36,18 +36,18 @@ window_open_eval <- function(id, type) {
 
 
 # Excel file(s) with session information
-# workshop_path     <- "./Bioc2020 talks and posters review.xlsx"
+workshop_path     <- "./Bioc2020 talks and posters review.xlsx"
 # contribution_path <- "./BioC2020_talks_posters.xlsx"
 # 
-# workshop_table <- readxl::read_excel(workshop_path)
+workshop_table <- readxl::read_excel(workshop_path)
 # contribution_table_raw <- readxl::read_excel(contribution_path)
 # contribution_table <- contribution_table_raw[!is.na(contribution_table_raw$Id),]
 
 # Alternatively, read directly from a GSheet that has been shared for view 
-library(gsheet) # install.packages("gsheet")
-workshop_table <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1kaYuJKlt7sNSiLumQYnZau5TgTx9W9SkSQsQa8xBCLM/edit?usp=sharing")
-# Remove duplicate submissions, ignoring Timestamp
-workshop_table <- workshop_table[!duplicated(workshop_table[, colnames(workshop_table) != "Timestamp"]), ]
+# library(gsheet) # install.packages("gsheet")
+# workshop_table <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1kaYuJKlt7sNSiLumQYnZau5TgTx9W9SkSQsQa8xBCLM/edit?usp=sharing")
+# # Remove duplicate submissions, ignoring Timestamp
+# workshop_table <- workshop_table[!duplicated(workshop_table[, colnames(workshop_table) != "Timestamp"]), ]
 
 # Get unique reviewer's names
 reviewers_names <- workshop_table %>% dplyr::select(starts_with("Reviewer")) %>% unlist %>% unique() 
