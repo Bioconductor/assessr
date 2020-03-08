@@ -83,8 +83,8 @@ abstract_table_compact <- workshop_table[, preselected_cols]
           inputId = "submissionType",
           label = "Type of contribution",
           # choices = c("Workshops" = "workshop", "Talks and other sessions" = "contribution"),
-          choices = c("Workshops" = "workshop"),
-          selected =  "Workshop", 
+          choices = c("Abstracts" = "workshop"),
+          selected =  "Abstracts", 
           multiple = FALSE
         ),
         selectInput(
